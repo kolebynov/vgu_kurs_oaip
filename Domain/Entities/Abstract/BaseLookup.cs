@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Entities
+namespace Domain.Entities.Abstract
 {
     public abstract class BaseLookup : BaseEntity
     {

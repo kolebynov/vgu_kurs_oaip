@@ -70,10 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Attributes\NavPropertyAttribute.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFRepository.cs" />
-    <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\BaseLookup.cs" />
+    <Compile Include="Entities\Abstract\BaseEntity.cs" />
+    <Compile Include="Entities\Abstract\BaseLookup.cs" />
     <Compile Include="Entities\BookedTour.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Contact.cs" />

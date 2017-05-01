@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Entities.Abstract;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
@@ -9,10 +10,13 @@ namespace Domain.Entities
         [MaxLength(500)]
         [Required]
         public string Name { get; set; }
+
         [MaxLength(100)]
         public string FirstName { get; set; }
+
         [MaxLength(100)]
         public string SecondName { get; set; }
+
         [MaxLength(100)]
         public string MiddleName { get; set; }
     }

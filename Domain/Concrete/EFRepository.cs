@@ -4,10 +4,11 @@ using Domain.Abstract;
 using System.Reflection;
 using System.ComponentModel.DataAnnotations;
 using Domain.Resources;
+using Domain.Attributes;
 
 namespace Domain.Concrete
 {
-    public class EFRepository<TEntity> : IRepository<TEntity>
+    public class EFRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         public IQueryable<TEntity> Entities => m_context.Entities;
 
@@ -49,7 +50,8 @@ namespace Domain.Concrete
         private void LoadProperties()
         {
             Type entityType = typeof(TEntity);
-            m_entityProperties = entityType.GetProperties(BindingFlags.Public);
+            m_entityProperties = entityType.GetProperties().Where(property =>
+                property.GetCustomAttribute<NavPropertyAttribute>() == null).ToArray();
             m_primaryKeyProperty = m_entityProperties.FirstOrDefault(property =>
                 property.GetCustomAttribute<KeyAttribute>() != null) ??
                 throw new InvalidOperationException(string.Format(DomainResources.PrimaryColumnNotFoundFormat,
