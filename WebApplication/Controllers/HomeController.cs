@@ -17,6 +17,7 @@ namespace WebApplication.Controllers
 
         public ActionResult Index()
         {
+            var contacts = m_repository.Entities.ToList();
             return View();
         }
 

@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace Domain.Concrete
 {
-    public class EFDbContext<T> : DbContext where T : BaseEntity
+    public class EFDbContext<T> : DbContext
     {
         public DbSet<T> Entities { get; set; }
 

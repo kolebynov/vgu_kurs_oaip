@@ -7,6 +7,7 @@ namespace Domain.Entities
     public class Contact : BaseEntity
     {
         [MaxLength(500)]
+        [Required]
         public string Name { get; set; }
         [MaxLength(100)]
         public string FirstName { get; set; }

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace Domain.Entities
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
+        [Key]
         [HiddenInput(DisplayValue = false)]
         public Guid Id { get; set; }
         [HiddenInput(DisplayValue = false)]

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using Domain.Abstract;
-using Domain.Entities;
 using System.Reflection;
+using System.ComponentModel.DataAnnotations;
+using Domain.Resources;
 
 namespace Domain.Concrete
 {
-    public class EFRepository<TEntity> :
-        IRepository<TEntity> where TEntity : BaseEntity
+    public class EFRepository<TEntity> : IRepository<TEntity>
     {
         public IQueryable<TEntity> Entities => m_context.Entities;
 
@@ -23,7 +23,7 @@ namespace Domain.Concrete
         }
         public void Update(TEntity entity)
         {
-            TEntity dbEntry = m_context.Entities.Find(entity.Id);
+            TEntity dbEntry = m_context.Entities.Find(m_primaryKeyProperty.GetValue(entity));
             if (dbEntry != null)
             {
                 foreach (PropertyInfo property in m_entityProperties)
@@ -31,9 +31,9 @@ namespace Domain.Concrete
             }
             m_context.SaveChanges();
         }
-        public TEntity Delete(Guid id)
+        public TEntity Delete(object primaryKeyValue)
         {
-            TEntity dbEntry = m_context.Entities.Find(id);
+            TEntity dbEntry = m_context.Entities.Find(primaryKeyValue);
             if (dbEntry != null)
             {
                 m_context.Entities.Remove(dbEntry);
@@ -44,11 +44,16 @@ namespace Domain.Concrete
 
         private PropertyInfo[] m_entityProperties;
         private EFDbContext<TEntity> m_context = new EFDbContext<TEntity>();
+        private PropertyInfo m_primaryKeyProperty;
 
         private void LoadProperties()
         {
             Type entityType = typeof(TEntity);
-            m_entityProperties = entityType.GetProperties();
+            m_entityProperties = entityType.GetProperties(BindingFlags.Public);
+            m_primaryKeyProperty = m_entityProperties.FirstOrDefault(property =>
+                property.GetCustomAttribute<KeyAttribute>() != null) ??
+                throw new InvalidOperationException(string.Format(DomainResources.PrimaryColumnNotFoundFormat,
+                entityType.Name));
         }
     }
 }

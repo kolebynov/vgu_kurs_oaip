@@ -27,8 +27,7 @@ namespace WebApplication.Infrastructure
 
         private void AddBindings()
         {
-            m_kernel.Bind<IRepository<BaseEntity>>().To<EFRepository<BaseEntity>>();
-            m_kernel.Bind<IRepository<Contact>>().To<EFRepository<Contact>>();
+            m_kernel.Bind(typeof(IRepository<>)).To(typeof(EFRepository<>));
         }
     }
 }
