@@ -50,7 +50,7 @@ namespace Domain.Model.Abstract
         }
         public void SetColumnValue(string columnName, object value)
         {
-            EntityColumn column = m_schema.Columns.Find(entityColumn =>
+            EntityColumn column = Schema.Columns.Find(entityColumn =>
                 entityColumn.Name == columnName);
             SetColumnValue(column, value);
         }
@@ -63,7 +63,7 @@ namespace Domain.Model.Abstract
         }
         public object GetColumnValue(string columnName)
         {
-            EntityColumn column = m_schema.Columns.Find(entityColumn =>
+            EntityColumn column = Schema.Columns.Find(entityColumn =>
                 entityColumn.Name == columnName);
             return GetColumnValue(column);
         }
@@ -75,7 +75,7 @@ namespace Domain.Model.Abstract
         }
         public T GetTypedColumnValue<T>(string columnName)
         {
-            EntityColumn column = m_schema.Columns.Find(entityColumn =>
+            EntityColumn column = Schema.Columns.Find(entityColumn =>
                 entityColumn.Name == columnName);
             return GetTypedColumnValue<T>(column);
         }
@@ -99,7 +99,7 @@ namespace Domain.Model.Abstract
         {
             if (column == null)
                 throw new ArgumentNullException(nameof(column));
-            if (column.Schema != m_schema)
+            if (column.Schema != Schema)
                 throw new Exception();
         }
     }
