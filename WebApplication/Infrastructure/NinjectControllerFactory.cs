@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Ninject;
 using Domain.Abstract;
-using Domain.Concrete;
-using Domain.Entities;
+using Domain.Entity;
+using Domain.Model;
 using System.Web.Routing;
 
 namespace WebApplication.Infrastructure

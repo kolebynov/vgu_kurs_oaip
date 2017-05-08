@@ -1,5 +1,5 @@
 ﻿using Domain.Abstract;
-using Domain.Entities;
+using Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IRepository<Contact> repository)
+        public HomeController(IRepository<Country> repository)
         {
             m_repository = repository;
         }
@@ -21,6 +21,6 @@ namespace WebApplication.Controllers
             return View();
         }
 
-        private IRepository<Contact> m_repository;
+        private IRepository<Country> m_repository;
     }
 }

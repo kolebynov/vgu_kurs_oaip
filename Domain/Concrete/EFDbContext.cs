@@ -1,16 +1,18 @@
 ﻿using System.Data.Entity;
-using System.Configuration;
+using Domain.Model.Abstract;
+using Domain.Model;
 
-namespace Domain.Concrete
+namespace Domain.Entity
 {
-    public class EFDbContext<T> : DbContext where T : class
+    public class EFDbContext<T> : DbContext where T : BaseModel
     {
         public DbSet<T> Entities { get; set; }
 
-        public EFDbContext()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.Connection.ConnectionString = 
-                ConfigurationManager.ConnectionStrings["EFDbContext"].ConnectionString;
+            modelBuilder.Entity<Contact>().HasOptional(c => c.CreatedBy).WithMany().HasForeignKey(c => c.CreatedById);
+            modelBuilder.Entity<Contact>().HasOptional(c => c.ModifiedBy).WithMany().HasForeignKey(c => c.ModifiedById);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

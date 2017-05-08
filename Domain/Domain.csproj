@@ -70,17 +70,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
-    <Compile Include="Attributes\NavPropertyAttribute.cs" />
+    <Compile Include="Model\LookupFieldAttribute.cs" />
+    <Compile Include="Entity\DomainSchemas.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFRepository.cs" />
-    <Compile Include="Entities\Abstract\BaseEntity.cs" />
-    <Compile Include="Entities\Abstract\BaseLookup.cs" />
-    <Compile Include="Entities\BookedTour.cs" />
-    <Compile Include="Entities\City.cs" />
-    <Compile Include="Entities\Contact.cs" />
-    <Compile Include="Entities\Country.cs" />
-    <Compile Include="Entities\Gender.cs" />
-    <Compile Include="Entities\Tour.cs" />
+    <Compile Include="Entity\EntityColumn.cs" />
+    <Compile Include="Entity\Schema.cs" />
+    <Compile Include="Model\Abstract\BaseEntity.cs" />
+    <Compile Include="Model\Abstract\BaseLookup.cs" />
+    <Compile Include="Model\Abstract\BaseModel.cs" />
+    <Compile Include="Model\BookedTour.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\Contact.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\Tour.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\DomainResources.Designer.cs">
       <AutoGen>True</AutoGen>

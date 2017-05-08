@@ -2,7 +2,7 @@
 
 namespace Domain.Attributes
 {
-    public class NavPropertyAttribute : Attribute
+    public class LookupFieldAttribute : Attribute
     {
     }
 }

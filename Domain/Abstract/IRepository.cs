@@ -1,8 +1,9 @@
-﻿using System.Linq;
+﻿using Domain.Model.Abstract;
+using System.Linq;
 
 namespace Domain.Abstract
 {
-    public interface IRepository<TEntity>
+    public interface IRepository<TEntity> where TEntity : BaseModel
     {
         IQueryable<TEntity> Entities { get; }
 
