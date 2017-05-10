@@ -1,7 +1,4 @@
-﻿using Domain.Attributes;
-using Domain.Model.Abstract;
-using System;
-using System.Collections.Generic;
+﻿using Domain.Model.Abstract;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

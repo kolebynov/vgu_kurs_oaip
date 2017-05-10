@@ -1,6 +1,6 @@
-﻿using System.Data.Entity;
+﻿using Domain.Model;
 using Domain.Model.Abstract;
-using Domain.Model;
+using System.Data.Entity;
 
 namespace Domain.Entity
 {

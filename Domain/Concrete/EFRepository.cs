@@ -1,12 +1,7 @@
-﻿using System;
-using System.Linq;
-using Domain.Abstract;
-using System.Reflection;
-using System.ComponentModel.DataAnnotations;
-using Domain.Resources;
-using Domain.Attributes;
-using System.Configuration;
+﻿using Domain.Abstract;
 using Domain.Model.Abstract;
+using System.Configuration;
+using System.Linq;
 
 namespace Domain.Entity
 {
