@@ -12,13 +12,23 @@ namespace Domain.Model
     public class City : BaseLookup
     {
         [LookupField]
-        public Country Country { get; set; }
+        public Country Country
+        {
+            get => GetTypedColumnValue<Country>(nameof(Country));
+            set => SetColumnValue(nameof(Country), value);
+        }
 
-        [ForeignKey(nameof(Country))]
+        [ForeignKey(nameof(Country)), Column]
         public Guid? CountryId
         {
             get => GetTypedColumnValue<Guid?>(nameof(CountryId));
             set => SetColumnValue(nameof(CountryId), value);
+        }
+
+        [NameColumn]
+        public string CountryName
+        {
+            get => Country?.GetDisplayColumnValue();
         }
     }
 }

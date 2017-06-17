@@ -3,7 +3,7 @@ using Domain.Model.Abstract;
 using System.Configuration;
 using System.Linq;
 
-namespace Domain.Entity
+namespace Domain.Concrete
 {
     public class EFRepository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {

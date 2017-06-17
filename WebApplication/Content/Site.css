@@ -22,3 +22,29 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.leftMenu {
+    width: 20%;
+    float: left;
+    border-right: 1px solid black;
+}
+
+.contentWrapper {
+    width: 70%;
+    float: left;
+}
+
+.rightMenu {
+    width: 10%;
+    float: left;
+}
+
+.grid-header-item {
+    float: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.grid-item-column {
+    float: left;
+}

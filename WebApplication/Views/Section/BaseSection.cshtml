@@ -1,0 +1,31 @@
+﻿@model WebApplication.Models.SectionViewModel
+
+@{
+    ViewBag.Title = Model.Caption;
+}
+
+<div class="grid">
+    <div class="grid-header">
+        @foreach (var gridColumn in Model.GridColumns)
+        {
+            <div style="width: @gridColumn.GridWidth.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))%" class="grid-header-item">
+                @gridColumn.EntityColumn.Caption
+            </div>
+        }
+    </div>
+    <div class="grid-items">
+        @foreach (var entity in Model.Entities)
+        {
+            <div class="grid-item">
+                @foreach (var gridColumn in Model.GridColumns)
+                {
+                    object value = gridColumn.EntityColumn.IsLookup ?
+                            entity.GetTypedColumnValue<BaseModel>(gridColumn.EntityColumn).GetDisplayColumnValue() :
+                            entity.GetColumnValue(gridColumn.EntityColumn);
+                    <div id="@gridColumn.EntityColumn.Name" style="width: @gridColumn.GridWidth.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))%" class="grid-item-column">@value</div>
+                }
+            </div>
+        }
+    </div>
+</div>
+

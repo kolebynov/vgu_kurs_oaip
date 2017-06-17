@@ -1,4 +1,4 @@
-﻿using Domain.Entity;
+﻿using Domain.Concrete;
 using System;
 using System.Collections.Generic;
 
@@ -84,6 +84,10 @@ namespace Domain.Model.Abstract
         public object GetPrimaryColumnValue()
         {
             return GetColumnValue(Schema.PrimaryColumn);
+        }
+        public string GetDisplayColumnValue()
+        {
+            return GetTypedColumnValue<string>(Schema.DisplayColumn);
         }
 
         private Schema m_schema;

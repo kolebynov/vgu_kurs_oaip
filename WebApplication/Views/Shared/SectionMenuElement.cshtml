@@ -1,0 +1,12 @@
+﻿@model WebApplication.Models.SectionMenuElement
+@{ 
+    string className = "section-menu-element";
+    if (Model.IsSelected)
+    {
+        className += " selected";
+    }
+}
+
+<div class=@className>
+    @Html.ActionLink(Model.Caption, Model.Name, "Section", null, new { @class = "section-menu-link" })
+</div>

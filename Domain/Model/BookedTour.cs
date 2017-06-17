@@ -13,28 +13,46 @@ namespace Domain.Model
     public class BookedTour : BaseEntity
     {
         [LookupField]
-        public Contact Contact { get; set; }
+        public Contact Contact
+        {
+            get => GetTypedColumnValue<Contact>(nameof(Contact));
+            set => SetColumnValue(nameof(Contact), value);
+        }
 
-        [Required]
-        [ForeignKey(nameof(Contact))]
+        [ForeignKey(nameof(Contact)), Column, Required]
         public Guid ContactId
         {
             get => GetTypedColumnValue<Guid>(nameof(ContactId));
             set => SetColumnValue(nameof(ContactId), value);
         }
 
-        [LookupField]
-        public Tour Tour { get; set; }
+        [NameColumn]
+        public string ContactName
+        {
+            get => Contact?.GetDisplayColumnValue();
+        }
 
-        [Required]
-        [ForeignKey(nameof(Tour))]
+        [LookupField]
+        public Tour Tour
+        {
+            get => GetTypedColumnValue<Tour>(nameof(Tour));
+            set => SetColumnValue(nameof(Tour), value);
+        }
+
+        [ForeignKey(nameof(Tour)), Column, Required]
         public Guid TourId
         {
             get => GetTypedColumnValue<Guid>(nameof(TourId));
             set => SetColumnValue(nameof(TourId), value);
         }
 
-        [Required]
+        [NameColumn]
+        public string TourName
+        {
+            get => Tour?.GetDisplayColumnValue();
+        }
+
+        [Required, Column]
         public DateTime Date
         {
             get => GetTypedColumnValue<DateTime>(nameof(Date));

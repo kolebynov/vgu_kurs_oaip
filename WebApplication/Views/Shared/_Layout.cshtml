@@ -4,9 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    @RenderBody();
+    <div class="mainContainer">
+        <div class="leftMenu">
+            @{ Html.RenderAction("LeftMenu", "Nav"); }
+        </div>
+        <div class="contentWrapper">
+            @RenderBody()
+        </div>
+        <div class="rightMenu">
+            @{ Html.RenderAction("RightMenu", "Nav"); }
+        </div>
+    </div>
 </body>
 </html>

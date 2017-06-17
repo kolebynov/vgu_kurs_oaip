@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain.Tests.Helpers;
 using Domain.Model;
 using System.Linq;
-using Domain.Entity;
+using Domain.Concrete;
 
 namespace Domain.Tests.Concrete
 {

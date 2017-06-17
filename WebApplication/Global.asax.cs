@@ -2,6 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using WebApplication.Infrastructure;
+using Domain.Concrete;
 
 namespace WebApplication
 {
@@ -13,6 +14,7 @@ namespace WebApplication
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DomainSchemas.GenerateAllSchemas();
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
