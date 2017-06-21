@@ -61,11 +61,35 @@
     <Compile Include="Controls\BaseEdit.Designer.cs">
       <DependentUpon>BaseEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DateTimeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateTimeEdit.Designer.cs">
+      <DependentUpon>DateTimeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EditableDataGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\EditableDataGridView.Designer.cs">
       <DependentUpon>EditableDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FloatEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FloatEdit.Designer.cs">
+      <DependentUpon>FloatEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LookupEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LookupEdit.Designer.cs">
+      <DependentUpon>LookupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumericEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericEdit.Designer.cs">
+      <DependentUpon>NumericEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TextEdit.cs">
       <SubType>UserControl</SubType>
@@ -79,11 +103,35 @@
     <Compile Include="Forms\BaseEditForm.Designer.cs">
       <DependentUpon>BaseEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BookedTourEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookedTourEditForm.Designer.cs">
+      <DependentUpon>BookedTourEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ContactEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ContactEditForm.Designer.cs">
       <DependentUpon>ContactEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TourEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TourEditForm.Designer.cs">
+      <DependentUpon>TourEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TourForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TourForm.Designer.cs">
+      <DependentUpon>TourForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DataHelper.cs" />
     <Compile Include="Forms\MainForm.cs">
@@ -93,14 +141,29 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Factory.cs" />
+    <Compile Include="Infrastructure\FilterHelper.cs" />
     <Compile Include="Infrastructure\IDataHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Captions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Captions.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\BaseEdit.resx">
       <DependentUpon>BaseEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateTimeEdit.resx">
+      <DependentUpon>DateTimeEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\EditableDataGridView.resx">
       <DependentUpon>EditableDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LookupEdit.resx">
+      <DependentUpon>LookupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumericEdit.resx">
+      <DependentUpon>NumericEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TextEdit.resx">
       <DependentUpon>TextEdit.cs</DependentUpon>
@@ -108,11 +171,23 @@
     <EmbeddedResource Include="Forms\BaseEditForm.resx">
       <DependentUpon>BaseEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookedTourEditForm.resx">
+      <DependentUpon>BookedTourEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ContactEditForm.resx">
       <DependentUpon>ContactEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TourEditForm.resx">
+      <DependentUpon>TourEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TourForm.resx">
+      <DependentUpon>TourForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,7 +197,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\Captions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Captions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -137,12 +217,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{807207a7-3ed0-427a-b7d5-518e60efa65f}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

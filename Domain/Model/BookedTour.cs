@@ -13,7 +13,7 @@ namespace Domain.Model
     public class BookedTour : BaseEntity
     {
         [LookupField]
-        public Contact Contact
+        public virtual Contact Contact
         {
             get => GetTypedColumnValue<Contact>(nameof(Contact));
             set => SetColumnValue(nameof(Contact), value);
@@ -33,7 +33,7 @@ namespace Domain.Model
         }
 
         [LookupField]
-        public Tour Tour
+        public virtual Tour Tour
         {
             get => GetTypedColumnValue<Tour>(nameof(Tour));
             set => SetColumnValue(nameof(Tour), value);

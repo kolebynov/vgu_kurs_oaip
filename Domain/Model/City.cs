@@ -12,7 +12,7 @@ namespace Domain.Model
     public class City : BaseLookup
     {
         [LookupField]
-        public Country Country
+        public virtual Country Country
         {
             get => GetTypedColumnValue<Country>(nameof(Country));
             set => SetColumnValue(nameof(Country), value);

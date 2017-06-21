@@ -1,6 +1,6 @@
 ﻿namespace FormApp.Controls
 {
-    partial class TextEdit
+    partial class NumericEdit
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.m_control = new System.Windows.Forms.TextBox();
+            this.m_control = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.m_control)).BeginInit();
             this.SuspendLayout();
             // 
             // m_control
             // 
-            this.m_control.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.m_control.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_control.Location = new System.Drawing.Point(110, 0);
             this.m_control.Name = "m_control";
-            this.m_control.Size = new System.Drawing.Size(147, 20);
-            this.m_control.TabIndex = 0;
+            this.m_control.Size = new System.Drawing.Size(119, 20);
+            this.m_control.TabIndex = 3;
             // 
-            // TextEdit
+            // NumericEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.m_control);
-            this.Name = "TextEdit";
-            this.Size = new System.Drawing.Size(257, 20);
+            this.Name = "NumericEdit";
+            this.Size = new System.Drawing.Size(229, 20);
             this.Controls.SetChildIndex(this.m_control, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.m_control)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox m_control;
+
+        private System.Windows.Forms.NumericUpDown m_control;
     }
 }

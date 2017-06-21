@@ -61,11 +61,56 @@ namespace Domain.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Забронированный тур.
+        /// </summary>
+        internal static string BookedTourCaption {
+            get {
+                return ResourceManager.GetString("BookedTourCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Город.
+        /// </summary>
+        internal static string CityCaption {
+            get {
+                return ResourceManager.GetString("CityCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Контакт.
         /// </summary>
         internal static string ContactCaption {
             get {
                 return ResourceManager.GetString("ContactCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Страна.
+        /// </summary>
+        internal static string CountryCaption {
+            get {
+                return ResourceManager.GetString("CountryCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пол.
+        /// </summary>
+        internal static string GenderCaption {
+            get {
+                return ResourceManager.GetString("GenderCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тур.
+        /// </summary>
+        internal static string TourCaption {
+            get {
+                return ResourceManager.GetString("TourCaption", resourceCulture);
             }
         }
     }

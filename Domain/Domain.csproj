@@ -72,6 +72,7 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Attributes\LookupFieldAttribute.cs" />
     <Compile Include="Attributes\NameColumnAttribute.cs" />
+    <Compile Include="Concrete\RequiredFieldException.cs" />
     <Compile Include="Entity\DomainSchemas.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFRepository.cs" />

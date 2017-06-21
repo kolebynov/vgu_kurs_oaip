@@ -20,7 +20,7 @@ namespace Domain.Model
         }
 
         [LookupField]
-        public Country Country
+        public virtual Country Country
         {
             get => GetTypedColumnValue<Country>(nameof(Country));
             set => SetColumnValue(nameof(Country), value);
@@ -40,7 +40,7 @@ namespace Domain.Model
         }
 
         [LookupField]
-        public City City
+        public virtual City City
         {
             get => GetTypedColumnValue<City>(nameof(City));
             set => SetColumnValue(nameof(City), value);

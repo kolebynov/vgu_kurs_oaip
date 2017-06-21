@@ -1,6 +1,7 @@
 ﻿using Domain.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Domain.Model.Abstract
 {
@@ -19,6 +20,8 @@ namespace Domain.Model.Abstract
         {
             m_schema = DomainSchemas.GetSchema(GetType());
             m_columnValues = new Dictionary<EntityColumn, object>();
+            Inserting += BaseModelInserting;
+            Updating += BaseModelUpdating;
         }
 
         public void OnInserting()
@@ -54,8 +57,6 @@ namespace Domain.Model.Abstract
         public void SetColumnValue(EntityColumn column, object value)
         {
             CheckColumn(column);
-            if ((column.Type == _dateTimeType || column.Type == _nullableDateTimeType) && value != null)
-                value = ((DateTime?)value).Value.ToUniversalTime();
             m_columnValues[column] = value;
         }
         public object GetColumnValue(string columnName)
@@ -79,7 +80,7 @@ namespace Domain.Model.Abstract
         public T GetTypedColumnValue<T>(EntityColumn column)
         {
             object result = GetColumnValue(column);
-            return result != null ? (T)result : default(T);
+            return result != null ? (T)result : Default<T>();
         }
         public object GetPrimaryColumnValue()
         {
@@ -90,11 +91,17 @@ namespace Domain.Model.Abstract
             return GetTypedColumnValue<string>(Schema.DisplayColumn);
         }
 
+        protected void BaseModelUpdating(object sender, EventArgs e) =>
+            CheckRequiredColumnValues();
+        protected void BaseModelInserting(object sender, EventArgs e) =>
+            CheckRequiredColumnValues();
+
         private Schema m_schema;
         private Dictionary<EntityColumn, object> m_columnValues;
 
         private static readonly Type _dateTimeType = typeof(DateTime);
         private static readonly Type _nullableDateTimeType = typeof(DateTime?);
+        private static readonly DateTime _minDateTimeValue = new DateTime(1900, 1, 1);
 
         private void CheckColumn(EntityColumn column)
         {
@@ -102,6 +109,24 @@ namespace Domain.Model.Abstract
                 throw new ArgumentNullException(nameof(column));
             if (column.Schema != Schema)
                 throw new Exception();
+        }
+        private T Default<T>()
+        {
+            Type type = typeof(T);
+            if (type == _dateTimeType)
+                return (T)(object)_minDateTimeValue;
+            else
+                return default(T);
+        }
+        private void CheckRequiredColumnValues()
+        {
+            IEnumerable<EntityColumn> requiredColumns = Schema.Columns.Where(
+                column => column.IsRequired);
+            foreach (EntityColumn requiredColumn in requiredColumns)
+            {
+                if (!m_columnValues.ContainsKey(requiredColumn))
+                    throw new RequiredColumnException(this, requiredColumn);
+            }
         }
     }
 }

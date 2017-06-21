@@ -117,40 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BookedTour_Contact" xml:space="preserve">
-    <value>Контакт</value>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение действия</value>
   </data>
-  <data name="BookedTour_Date" xml:space="preserve">
-    <value>Дата</value>
+  <data name="ConfirmationDelete" xml:space="preserve">
+    <value>Вы действительно хотите удалить выбранный элемент?</value>
   </data>
-  <data name="BookedTour_Tour" xml:space="preserve">
-    <value>Тур</value>
+  <data name="DuplicatesDeleted" xml:space="preserve">
+    <value>Дупликаты успешно удалены.</value>
   </data>
-  <data name="Contact_FirstName" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="Contact_Gender" xml:space="preserve">
-    <value>Пол</value>
-  </data>
-  <data name="Contact_MiddleName" xml:space="preserve">
-    <value>Отчество</value>
-  </data>
-  <data name="Contact_Name" xml:space="preserve">
-    <value>Полное имя</value>
-  </data>
-  <data name="Contact_SecondName" xml:space="preserve">
-    <value>Фамилия</value>
-  </data>
-  <data name="Tour_City" xml:space="preserve">
-    <value>Город</value>
-  </data>
-  <data name="Tour_Country" xml:space="preserve">
-    <value>Страна</value>
-  </data>
-  <data name="Tour_Name" xml:space="preserve">
-    <value>Название</value>
-  </data>
-  <data name="Tour_Price" xml:space="preserve">
-    <value>Стоимость</value>
+  <data name="MessageCaption" xml:space="preserve">
+    <value>Сообщение</value>
   </data>
 </root>

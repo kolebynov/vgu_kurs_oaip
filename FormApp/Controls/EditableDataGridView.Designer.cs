@@ -54,33 +54,33 @@
             // m_addButton
             // 
             this.m_addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.m_addButton.Image = global::FormApp.Properties.Resources._1;
             this.m_addButton.Location = new System.Drawing.Point(12, 178);
             this.m_addButton.Name = "m_addButton";
-            this.m_addButton.Size = new System.Drawing.Size(53, 23);
+            this.m_addButton.Size = new System.Drawing.Size(28, 28);
             this.m_addButton.TabIndex = 1;
-            this.m_addButton.Text = "button1";
             this.m_addButton.UseVisualStyleBackColor = true;
             this.m_addButton.Click += new System.EventHandler(this.OnAddButtonClick);
             // 
             // m_editButton
             // 
             this.m_editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.m_editButton.Location = new System.Drawing.Point(71, 178);
+            this.m_editButton.Image = global::FormApp.Properties.Resources._2;
+            this.m_editButton.Location = new System.Drawing.Point(46, 178);
             this.m_editButton.Name = "m_editButton";
-            this.m_editButton.Size = new System.Drawing.Size(53, 23);
+            this.m_editButton.Size = new System.Drawing.Size(28, 28);
             this.m_editButton.TabIndex = 2;
-            this.m_editButton.Text = "button2";
             this.m_editButton.UseVisualStyleBackColor = true;
             this.m_editButton.Click += new System.EventHandler(this.OnEditButtonClick);
             // 
             // m_deleteButton
             // 
             this.m_deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.m_deleteButton.Location = new System.Drawing.Point(130, 178);
+            this.m_deleteButton.Image = global::FormApp.Properties.Resources._3;
+            this.m_deleteButton.Location = new System.Drawing.Point(80, 179);
             this.m_deleteButton.Name = "m_deleteButton";
-            this.m_deleteButton.Size = new System.Drawing.Size(53, 23);
+            this.m_deleteButton.Size = new System.Drawing.Size(28, 28);
             this.m_deleteButton.TabIndex = 3;
-            this.m_deleteButton.Text = "button3";
             this.m_deleteButton.UseVisualStyleBackColor = true;
             this.m_deleteButton.Click += new System.EventHandler(this.OnDeleteButtonClick);
             // 

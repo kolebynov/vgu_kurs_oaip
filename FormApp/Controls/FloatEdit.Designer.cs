@@ -1,6 +1,6 @@
 ﻿namespace FormApp.Controls
 {
-    partial class TextEdit
+    partial class FloatEdit
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,33 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.m_control = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
-            // m_control
-            // 
-            this.m_control.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_control.Location = new System.Drawing.Point(110, 0);
-            this.m_control.Name = "m_control";
-            this.m_control.Size = new System.Drawing.Size(147, 20);
-            this.m_control.TabIndex = 0;
-            // 
-            // TextEdit
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.m_control);
-            this.Name = "TextEdit";
-            this.Size = new System.Drawing.Size(257, 20);
-            this.Controls.SetChildIndex(this.m_control, 0);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion
-        private System.Windows.Forms.TextBox m_control;
     }
 }

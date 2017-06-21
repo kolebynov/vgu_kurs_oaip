@@ -39,6 +39,8 @@ namespace FormApp.Infrastructure
         {
             _kernel.Bind(typeof(IRepository<>)).To(typeof(EFRepository<>));
             _kernel.Bind<BaseEditForm<Contact>>().To<ContactEditForm>();
+            _kernel.Bind<BaseEditForm<BookedTour>>().To<BookedTourEditForm>();
+            _kernel.Bind<BaseEditForm<Tour>>().To<TourEditForm>();
             _kernel.Bind(typeof(IDataHelper<>)).To(typeof(DataHelper<>));
         }
     }

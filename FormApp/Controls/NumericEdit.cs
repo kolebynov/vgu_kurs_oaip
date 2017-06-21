@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace FormApp.Controls
 {
-    public partial class TextEdit : BaseEdit
+    public partial class NumericEdit : BaseEdit
     {
         public override Control Control => m_control;
         public override object Value
         {
-            get => m_control.Text;
-            set => m_control.Text = value.ToString();
+            get => m_control.Value;
+            set => m_control.Value = (decimal)value;
         }
-        public override object DefaultValue => "";
 
-        public TextEdit()
+        public NumericEdit()
         {
             InitializeComponent();
         }

@@ -21,6 +21,8 @@ namespace FormApp.Forms
             BindingsControls.Add(m_firstNameTextEdit);
             BindingsControls.Add(m_secondNameTextEdit);
             BindingsControls.Add(m_middleNameTextEdit);
+            BindingsControls.Add(m_genderEdit);
+            DataHelper.LoadLookupEdit<Gender, object>(m_genderEdit);
         }
         public ContactEditForm(IDataHelper<Contact> dataHelper) : this(dataHelper, Guid.Empty)
         { }

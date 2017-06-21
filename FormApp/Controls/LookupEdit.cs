@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace FormApp.Controls
 {
-    public partial class TextEdit : BaseEdit
+    public partial class LookupEdit : BaseEdit
     {
         public override Control Control => m_control;
         public override object Value
         {
-            get => m_control.Text;
-            set => m_control.Text = value.ToString();
+            get => m_control.SelectedValue ?? Guid.Empty;
+            set => m_control.SelectedValue = value;
         }
-        public override object DefaultValue => "";
+        public override object DefaultValue => Guid.Empty;
 
-        public TextEdit()
+        public LookupEdit()
         {
             InitializeComponent();
         }

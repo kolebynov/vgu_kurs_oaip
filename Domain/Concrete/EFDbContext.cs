@@ -10,8 +10,7 @@ namespace Domain.Concrete
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Contact>().HasOptional(c => c.CreatedBy).WithMany().HasForeignKey(c => c.CreatedById);
-            modelBuilder.Entity<Contact>().HasOptional(c => c.ModifiedBy).WithMany().HasForeignKey(c => c.ModifiedById);
+            modelBuilder.Entity<Contact>();
             modelBuilder.Entity<BookedTour>();
             modelBuilder.Entity<City>();
             modelBuilder.Entity<Country>();

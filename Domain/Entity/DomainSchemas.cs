@@ -71,7 +71,9 @@ namespace Domain.Concrete
                         Schema = schema,
                         IsLookup = property.GetCustomAttribute<LookupFieldAttribute>() != null,
                         IsHidden = !property.GetCustomAttribute<HiddenInputAttribute>()?.DisplayValue ?? false,
-                        IsNameColumn = property.GetCustomAttribute<NameColumnAttribute>() != null
+                        IsNameColumn = property.GetCustomAttribute<NameColumnAttribute>() != null,
+                        IsForeignKey = property.GetCustomAttribute<ForeignKeyAttribute>() != null,
+                        IsRequired = property.GetCustomAttribute<RequiredAttribute>() != null
                     })
                 .ToList();
         }

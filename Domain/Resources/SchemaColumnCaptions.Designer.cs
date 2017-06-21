@@ -61,11 +61,47 @@ namespace Domain.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Контакт.
+        /// </summary>
+        internal static string BookedTour_Contact {
+            get {
+                return ResourceManager.GetString("BookedTour_Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дата.
+        /// </summary>
+        internal static string BookedTour_Date {
+            get {
+                return ResourceManager.GetString("BookedTour_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тур.
+        /// </summary>
+        internal static string BookedTour_Tour {
+            get {
+                return ResourceManager.GetString("BookedTour_Tour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Имя.
         /// </summary>
         internal static string Contact_FirstName {
             get {
                 return ResourceManager.GetString("Contact_FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пол.
+        /// </summary>
+        internal static string Contact_Gender {
+            get {
+                return ResourceManager.GetString("Contact_Gender", resourceCulture);
             }
         }
         
@@ -97,11 +133,38 @@ namespace Domain.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на Город.
         /// </summary>
-        internal static string Tour_ {
+        internal static string Tour_City {
             get {
-                return ResourceManager.GetString("Tour_", resourceCulture);
+                return ResourceManager.GetString("Tour_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Страна.
+        /// </summary>
+        internal static string Tour_Country {
+            get {
+                return ResourceManager.GetString("Tour_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Название.
+        /// </summary>
+        internal static string Tour_Name {
+            get {
+                return ResourceManager.GetString("Tour_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Стоимость.
+        /// </summary>
+        internal static string Tour_Price {
+            get {
+                return ResourceManager.GetString("Tour_Price", resourceCulture);
             }
         }
     }

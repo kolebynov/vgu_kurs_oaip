@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FormApp.Properties {
+namespace FormApp.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace FormApp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Captions {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Captions() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace FormApp.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FormApp.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FormApp.Resources.Captions", typeof(Captions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,32 +61,38 @@ namespace FormApp.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на Подтверждение действия.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
+        internal static string Confirmation {
             get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Confirmation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на Вы действительно хотите удалить выбранный элемент?.
         /// </summary>
-        internal static System.Drawing.Bitmap _2 {
+        internal static string ConfirmationDelete {
             get {
-                object obj = ResourceManager.GetObject("2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("ConfirmationDelete", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на Дупликаты успешно удалены..
         /// </summary>
-        internal static System.Drawing.Bitmap _3 {
+        internal static string DuplicatesDeleted {
             get {
-                object obj = ResourceManager.GetObject("3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("DuplicatesDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сообщение.
+        /// </summary>
+        internal static string MessageCaption {
+            get {
+                return ResourceManager.GetString("MessageCaption", resourceCulture);
             }
         }
     }

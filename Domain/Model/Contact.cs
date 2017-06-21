@@ -1,5 +1,6 @@
 ﻿using Domain.Attributes;
 using Domain.Model.Abstract;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
@@ -39,5 +40,39 @@ namespace Domain.Model
             get => GetTypedColumnValue<string>(nameof(MiddleName));
             set => SetColumnValue(nameof(MiddleName), value);
         }
+
+        [LookupField]
+        public virtual Gender Gender
+        {
+            get => GetTypedColumnValue<Gender>(nameof(Gender));
+            set => SetColumnValue(nameof(Gender), value);
+        }
+
+        [ForeignKey(nameof(Gender)), Column]
+        public Guid GenderId
+        {
+            get => GetTypedColumnValue<Guid>(nameof(GenderId));
+            set => SetColumnValue(nameof(GenderId), value);
+        }
+
+        [NameColumn]
+        public string GenderName
+        {
+            get => Gender?.GetDisplayColumnValue();
+        }
+
+        public Contact()
+        {
+            Inserting += ContactInserting;
+            Updating += ContactUpdating;
+        }
+
+        protected void ContactUpdating(object sender, System.EventArgs e) =>
+            ConcatNames();
+        protected void ContactInserting(object sender, System.EventArgs e) =>
+            ConcatNames();
+
+        private void ConcatNames() =>
+            Name = $"{SecondName} {FirstName} {MiddleName}";
     }
 }

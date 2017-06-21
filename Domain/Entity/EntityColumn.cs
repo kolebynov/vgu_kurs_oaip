@@ -11,10 +11,13 @@ namespace Domain.Concrete
         public bool IsLookup { get; internal set; }
         public bool IsHidden { get; internal set; }
         public bool IsNameColumn { get; internal set; }
+        public bool IsForeignKey { get; internal set; }
+        public bool IsRequired { get; internal set; }
         public string Caption
         {
             get => SchemaColumnCaptions.ResourceManager.GetString(Schema.Name + "_" + 
-                (IsNameColumn ? Name.Remove(Name.Length - 4) : Name));
+                (IsNameColumn ? Name.Remove(Name.Length - 4) : 
+                (IsForeignKey ? Name.Remove(Name.Length - 2) : Name)));
         }
     }
 }

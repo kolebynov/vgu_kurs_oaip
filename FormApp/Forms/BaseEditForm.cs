@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Domain.Concrete;
+using Domain.Model;
 using Domain.Model.Abstract;
 using FormApp.Controls;
 using FormApp.Infrastructure;
@@ -15,50 +16,58 @@ using System.Windows.Forms;
 namespace FormApp.Forms
 {
     public partial class BaseEditForm<T> : Form
+        where T : BaseEntity, new()
     {
         public Guid PrimaryKeyValue { get; set; }
-        public Contact Entity { get; private set; }
+        public T Entity { get; private set; }
+        public IDataHelper<T> DataHelper { get; }
 
         public event EventHandler OnEntitySaved;
 
-        public BaseEditForm(IDataHelper<Contact> dataHelper, Guid primaryKeyValue)
+        public BaseEditForm(IDataHelper<T> dataHelper, Guid primaryKeyValue)
         {
             InitializeComponent();
 
             PrimaryKeyValue = primaryKeyValue;
-            m_dataHelper = dataHelper;
+            DataHelper = dataHelper;
         }
-        public BaseEditForm(IDataHelper<Contact> dataHelper) : this(dataHelper, Guid.Empty)
+        public BaseEditForm(IDataHelper<T> dataHelper) : this(dataHelper, Guid.Empty)
         { }
         public BaseEditForm() : this(null)
         { }
 
         protected List<BaseEdit> BindingsControls { get; } = new List<BaseEdit>();
 
-        private IDataHelper<Contact> m_dataHelper;
-
         private void OnCancelButtonClick(object sender, EventArgs e) =>
             Close();
         private void OnSaveButtonClick(object sender, EventArgs e)
         {
-            m_dataHelper.SaveEntity(Entity);
+            DataHelper.SaveEntity(Entity);
             OnEntitySaved?.Invoke(this, EventArgs.Empty);
             OnCancelButtonClick(sender, e);
         }
         private void OnLoad(object sender, EventArgs e)
         {
-            Entity = PrimaryKeyValue == Guid.Empty ? new Contact() :
-                m_dataHelper.LoadEntity(PrimaryKeyValue);
-            InitBindings();
+            Entity = PrimaryKeyValue == Guid.Empty ? new T() :
+                DataHelper.LoadEntity(PrimaryKeyValue);
+            InitBindingControls();
+            Text = DomainSchemas.GetSchema<T>().Caption;
         }
-        private void InitBindings()
+        private void InitBindingControls()
         {
+            Schema schema = DomainSchemas.GetSchema<T>();
             foreach (BaseEdit edit in BindingsControls)
             {
                 if (edit.Tag != null)
                 {
                     string columnName = (string)edit.Tag;
-                    edit.DataBindings.Add("Value", Entity, columnName);
+                    edit.Label.Text = schema.Columns.Find(col => col.Name == columnName).Caption;
+                    Binding binding = edit.DataBindings.Add("Value", Entity, columnName);
+                    if (PrimaryKeyValue == Guid.Empty)
+                    {
+                        edit.Value = edit.DefaultValue;
+                        binding.WriteValue();
+                    }
                 }
             }
         }

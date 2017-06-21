@@ -2,6 +2,8 @@
 using System;
 using System.Windows.Forms;
 using FormApp.Forms;
+using FormApp.Infrastructure;
+using Domain.Model;
 
 namespace FormApp
 {
@@ -16,7 +18,7 @@ namespace FormApp
             Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(Factory.GetInstance<IDataHelper<BookedTour>>()));
         }
 
         static void Init()

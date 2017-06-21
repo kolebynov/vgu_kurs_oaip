@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BookedTourCaption" xml:space="preserve">
+    <value>Забронированный тур</value>
+  </data>
+  <data name="CityCaption" xml:space="preserve">
+    <value>Город</value>
+  </data>
   <data name="ContactCaption" xml:space="preserve">
     <value>Контакт</value>
+  </data>
+  <data name="CountryCaption" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="GenderCaption" xml:space="preserve">
+    <value>Пол</value>
+  </data>
+  <data name="TourCaption" xml:space="preserve">
+    <value>Тур</value>
   </data>
 </root>

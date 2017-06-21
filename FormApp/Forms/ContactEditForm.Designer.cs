@@ -31,6 +31,7 @@
             this.m_firstNameTextEdit = new FormApp.Controls.TextEdit();
             this.m_secondNameTextEdit = new FormApp.Controls.TextEdit();
             this.m_middleNameTextEdit = new FormApp.Controls.TextEdit();
+            this.m_genderEdit = new FormApp.Controls.LookupEdit();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +40,8 @@
             this.contentPanel.Controls.Add(this.m_middleNameTextEdit);
             this.contentPanel.Controls.Add(this.m_secondNameTextEdit);
             this.contentPanel.Controls.Add(this.m_firstNameTextEdit);
-            this.contentPanel.Size = new System.Drawing.Size(377, 230);
+            this.contentPanel.Controls.Add(this.m_genderEdit);
+            this.contentPanel.Size = new System.Drawing.Size(377, 244);
             // 
             // m_firstNameTextEdit
             // 
@@ -74,11 +76,21 @@
             this.m_middleNameTextEdit.Tag = "MiddleName";
             this.m_middleNameTextEdit.Value = "";
             // 
+            // m_genderEdit
+            // 
+            this.m_genderEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_genderEdit.Location = new System.Drawing.Point(12, 96);
+            this.m_genderEdit.Name = "m_genderEdit";
+            this.m_genderEdit.Size = new System.Drawing.Size(353, 22);
+            this.m_genderEdit.TabIndex = 3;
+            this.m_genderEdit.Tag = "GenderId";
+            // 
             // ContactEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 281);
+            this.ClientSize = new System.Drawing.Size(377, 295);
             this.Name = "ContactEditForm";
             this.Text = "ContactEditForm";
             this.contentPanel.ResumeLayout(false);
@@ -91,5 +103,6 @@
         private Controls.TextEdit m_firstNameTextEdit;
         private Controls.TextEdit m_middleNameTextEdit;
         private Controls.TextEdit m_secondNameTextEdit;
+        private Controls.LookupEdit m_genderEdit;
     }
 }
