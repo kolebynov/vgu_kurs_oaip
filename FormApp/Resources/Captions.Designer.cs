@@ -79,7 +79,7 @@ namespace FormApp.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Дупликаты успешно удалены..
+        ///   Ищет локализованную строку, похожую на Дубликаты успешно удалены..
         /// </summary>
         internal static string DuplicatesDeleted {
             get {

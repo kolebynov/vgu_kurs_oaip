@@ -56,7 +56,7 @@ namespace FormApp.Forms
             this.m_deleteDuplicatesButton.Name = "m_deleteDuplicatesButton";
             this.m_deleteDuplicatesButton.Size = new System.Drawing.Size(120, 23);
             this.m_deleteDuplicatesButton.TabIndex = 2;
-            this.m_deleteDuplicatesButton.Text = "Удалить дупликаты";
+            this.m_deleteDuplicatesButton.Text = "Удалить дубликаты";
             this.m_deleteDuplicatesButton.UseVisualStyleBackColor = true;
             this.m_deleteDuplicatesButton.Click += new System.EventHandler(this.OnDeleteDuplicatesButtonClick);
             // 

@@ -124,7 +124,7 @@
     <value>Вы действительно хотите удалить выбранный элемент?</value>
   </data>
   <data name="DuplicatesDeleted" xml:space="preserve">
-    <value>Дупликаты успешно удалены.</value>
+    <value>Дубликаты успешно удалены.</value>
   </data>
   <data name="MessageCaption" xml:space="preserve">
     <value>Сообщение</value>
